@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:padding="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"></ImageView>
+
+        </android.support.v7.widget.CardView>
+
+        <!--TITLE-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:textSize="14dp"
+            android:id="@+id/title"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/container"/>
+
+        <!--BY LINE-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:textSize="12dp"
+            android:alpha=".6"
+            android:id="@+id/byline"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingRight="20dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintLeft_toRightOf="@id/container"/>
+
+
+        <!--PUBLISHED DATE-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:textSize="12dp"
+            android:alpha=".6"
+            android:id="@+id/published_date"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintTop_toBottomOf="@id/byline"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/download"
+            app:layout_constraintLeft_toLeftOf="@+id/published_date"
+            app:layout_constraintTop_toBottomOf="@id/byline"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
