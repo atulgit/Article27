@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.article27.R;
 import com.example.article27.Util.ImageLoadTask;
 import com.example.article27.Util.Utils;
@@ -47,7 +48,9 @@ public class ArticlesAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ArticleItemViewHolder articleItemViewHolder = (ArticleItemViewHolder) viewHolder;
         final Article article = _articles.getArticles().get(i);
-        new ImageLoadTask(article.getMedia().get(0).getMediaMetadata().get(0).getUrl(), ((ImageView) articleItemViewHolder.mIcon)).execute();
+        Glide.with(_context)
+                .load(article.getMedia().get(0).getMediaMetadata().get(0).getUrl())
+                .into(((ImageView) articleItemViewHolder.mIcon));
         articleItemViewHolder.tvTitle.setText(article.getTitle());
         articleItemViewHolder.tvByline.setText(article.getByLine());
         articleItemViewHolder.tvPublished_date.setText(article.getPublishedDate());
